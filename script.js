@@ -70,11 +70,12 @@ function generatePassword() {
 
 
   for (i = 0; i < passwordLength; i++) {
-    passwordLength += passwordArray[Math.floor(Math.random() * passwordArray.length)];
+    blankPassword += passwordArray[Math.floor(Math.random() * passwordArray.length)];
 
   }
 
   return blankPassword;
+
 }
 
 
