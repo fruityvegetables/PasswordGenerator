@@ -1,14 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
+// array for lowercase letters
+var lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "w", "x", "y", "z"];
+// array for uppercase letters
+var upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 // array for numbers
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 // array for special characters
-var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '?', '='];
-// array for lowercase letters
-var lowerCaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-// array for uppercase letters
-var upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-//
+var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*"];
 var passwordArray = [];
 
 var blankPassword = '';
@@ -32,6 +32,8 @@ function generatePassword() {
   blankPassword = '';
   
   var passwordLength = prompt("How long would you like your password? Please enter an integer between 8-128.");
+
+  //extra I didn't use
   // if (passwordLength >= 8 && passwordLength <= 128) {
   //   alert('This number is within the parameters: ' + passwordLength);
   //   console.log(passwordLength);
@@ -39,32 +41,34 @@ function generatePassword() {
   var upperCase = confirm("Press OK for uppercase or CANCEL for none.");
   console.log(upperCase);
 
+  var lowerCase = confirm("Press OK for lowercase or CANCEL for none.");
+  console.log(lowerCase);
+
   var numeric = confirm("Press OK for numeric or CANCEL for none.");
   console.log(numeric);
 
   var specialCharOption = confirm("Press OK for special characters or CANCEL for none.");
   console.log(specialCharOption);
 
-  var lowerCase = confirm("Press OK for lowercase or CANCEL for none.");
-  console.log(lowerCase);
+
 
   if (lowerCase) {
-    passwordArray = blankPassword.concat(lowerCaseLetters);
+    passwordArray = passwordArray.concat(lowerCaseLetters);
 
   }
 
   if (upperCase) {
-    passwordArray = blankPassword.concat(upperCaseLetters);
+    passwordArray = passwordArray.concat(upperCaseLetters);
 
   }
 
   if (numeric) {
-    passwordArray = blankPassword.concat(numericCharacters);
+    passwordArray = passwordArray.concat(numericCharacters);
 
   }
 
   if (specialCharOption) {
-    passwordArray = blankPassword.concat(specialCharacters);
+    passwordArray = passwordArray.concat(specialCharacters);
 
   }
 
@@ -81,7 +85,7 @@ function generatePassword() {
 
 
 
-
+// some extras I didn't use.
 
 
     // if (upperCase == true) {

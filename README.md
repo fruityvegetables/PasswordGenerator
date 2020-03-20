@@ -4,4 +4,6 @@
 * Then, the user is asked if they would like lower case, upper case, or special characters (true/false).
 * Next the logic is ran and randomly generates bits of information from within our arrays
 
-### First initial commit
+### completed solution commit
+I have finally completed this code. It was quite a challenge.
+Next I will try to add some loops in case the user puts in unintended inputs.
