@@ -28,13 +28,13 @@ generateBtn.addEventListener("click", writePassword);
 
 
 function generatePassword() {
-
+  // initializing variables 
   passwordArray = [];
   blankPassword = '';
-
+  //asks the user for length of password to create
   var passwordLength = prompt("How long would you like your password? Please enter an integer between 8-128.");
 
-  //extra I didn't use
+  //extra I ended up using in a comical but maybe not efficient way.
   if (passwordLength >= 8 && passwordLength <= 128) {
     alert('This number is within the parameters: ' + passwordLength + ' ~Thanks!');
     console.log(passwordLength);
@@ -43,7 +43,7 @@ function generatePassword() {
     console.log(passwordLength);
   }
   
-
+  // asks user for each specific type of character to add to password.
   var upperCase = confirm("Press OK for uppercase or CANCEL for none.");
   console.log(upperCase);
 
@@ -55,7 +55,8 @@ function generatePassword() {
 
   var specialCharOption = confirm("Press OK for special characters or CANCEL for none.");
   console.log(specialCharOption);
-
+  /* infinite loops if the user hits cancel on all options. (I would try to fix it,
+   but I kind of like it where it is.) */
   do {
     if (lowerCase == false && upperCase == false && numeric == false && specialCharOption == false) {
       alert("HAHA you so CUTE, go ahead and try to refresh!!!")
@@ -64,7 +65,7 @@ function generatePassword() {
   }
   while (lowerCase == false && upperCase == false && numeric == false && specialCharOption == false)
 
-
+// adds characters to the password array, if each condition is TRUE
   if (lowerCase) {
     passwordArray = passwordArray.concat(lowerCaseLetters);
 
@@ -85,12 +86,12 @@ function generatePassword() {
 
   }
 
-
+  //repeats the process for a random character within our arrays from the start of the code
   for (i = 0; i < passwordLength; i++) {
     blankPassword += passwordArray[Math.floor(Math.random() * passwordArray.length)];
 
   }
-
+  
   return blankPassword;
 
 }
@@ -98,7 +99,7 @@ function generatePassword() {
 
 
 // some extras I didn't use.
-
+//
 
     // if (upperCase == true) {
     //   generatePassword(upperCaseLetters);
